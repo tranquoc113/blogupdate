@@ -17,7 +17,7 @@ class IndexView(generic.ListView):
 
 def list_post(request):
     list = Post.objects.filter(active__in=[True]).order_by('-created_at')
-    paginator = Paginator(list, 1)
+    paginator = Paginator(list, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     # print('page', page_obj.values())
