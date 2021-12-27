@@ -334,7 +334,6 @@ tags
 ### Project template
 
 media/
-static/
 
 .pytest_cache/
 
