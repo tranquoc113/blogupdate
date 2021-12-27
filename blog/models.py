@@ -75,7 +75,7 @@ class Post(BaseItem):
         ordering = ['created_at']
 
     title = models.CharField(max_length=512)
-    summary = models.TextField(default="")
+    summary = models.TextField(default="", null=True, blank=True)
     course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True, blank=True)
     category = models.ForeignKey(Menu, on_delete=models.SET_NULL, null=True, blank=True)
     sub_category = models.ForeignKey(SubMenu, on_delete=models.SET_NULL, null=True, blank=True)
