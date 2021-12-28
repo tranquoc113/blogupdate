@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-sv4_s@=u1n_qzexruiq!b(#yprzy(!fcawinz+0kf))xf4ima0
 DEBUG = env.bool('DEBUG', True)
 ADMIN_URL = "adminupdate/"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['45.76.150.38']
 
 
 # Application definition
