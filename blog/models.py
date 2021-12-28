@@ -36,7 +36,7 @@ class SubMenu(models.Model):
         Menu, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.name} - {self.category}
+        return f"{self.name} - {self.category}"
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
