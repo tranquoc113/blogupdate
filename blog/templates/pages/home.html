@@ -9,10 +9,18 @@
     <div class="row mb-4">
             {% for p in list %}
             <div class="card mb-3">
-                <div class="card-body">
+                <div class="card-body px-0">
                     <div class="d-flex">
-                        <div class="d-blox">
-                            <h5 class="card-title"><a href="{% url 'post:detail' p.slug %}">{{p.title}}</a></h5>
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img
+                            src="media/{{p.icon}}"
+                            class="img-fluid"
+                            style="width:300px"
+                    />
+
+                </div>
+                        <div class="d-blox mx-2">
+                            <h6 class="card-title"><a href="{% url 'post:detail' p.slug %}">{{p.title}}</a></h6>
                             <h6 class="card-subtitle mb-2 text-muted" style="font-size: 0.7rem !important">
                                 {{p.created_at|date:settings.DATETIME_FORMAT}}</h6>
                         </div>
@@ -20,18 +28,11 @@
 
 
                 </div>
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                    <img
-                            src="media/{{p.icon}}"
-                            class="img-fluid"
-                            style="height: 250px;width:100%"
-                    />
 
-                </div>
-                <div class="card-body">
-                    <p class="card-text mt-3">
-                        {{p.summary}}
-                    </p>
+<!--                <div class="card-body">-->
+<!--                    <p class="card-text mt-3">-->
+<!--                        {{p.summary}}-->
+<!--                    </p>-->
 
 <!--                    <div class="d-flex justify-content-between">-->
 <!--                        <div></div>-->
@@ -49,7 +50,7 @@
 <!--                    <div class="collapse mt-3" id="collapseExample{{p.id}}">-->
 <!--                        {{p.content|safe|escape}}-->
 <!--                    </div>-->
-                </div>
+<!--                </div>-->
             </div>
             {% endfor %}
             {% if list|length > 10 %}
