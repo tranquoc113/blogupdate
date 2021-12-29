@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-sv4_s@=u1n_qzexruiq!b(#yprzy(!fcawinz+0kf))xf4ima0
 DEBUG = env.bool('DEBUG', True)
 ADMIN_URL = "adminupdate/"
 
-ALLOWED_HOSTS = ['45.76.150.38']
+ALLOWED_HOSTS = ['45.76.150.38', '127.0.0.1']
 
 
 # Application definition
@@ -130,13 +130,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 MEDIA_ROOT = str(BASE_DIR / "media")
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = "/media/"
-CKEDITOR_UPLOAD_PATH ='static/image/post/'
+CKEDITOR_UPLOAD_PATH ='image/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

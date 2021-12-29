@@ -12,7 +12,7 @@ class BaseItem(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    icon = models.ImageField(upload_to='static/image/%Y/%m/%d')
+    icon = models.ImageField(upload_to='image/%Y/%m/%d')
     active = models.BooleanField(default=True)
     slug = models.SlugField(unique=True, blank=True, max_length=512)
 
